@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start location:</strong>
+  <%= @map.start_location %>
+</p>
+
+<div id="map"></div>
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>
+
+<%= javascript_tag do %>
+  var map = L.map('map').setView([51.505, -0.09], 13);
+<% end %>
